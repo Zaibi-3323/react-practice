@@ -32,25 +32,50 @@ const Header = () => {
   //   setMyArray (myNewArray)
   //  }
 
-  const [count, setCount] = useState(0);
+  const [name, setName] = useState();
+  const [fullName, setFullName] = useState();
 
-  const number = () => {
-    setCount(count + 1);
-    console.log("clicked");
+  const userName = (event) => {
+    console.log(event.target.value);
+    setName(event.target.value);
+  };
+
+  const onSubmit = () => {
+    setFullName(name);
   };
 
   return (
-    <header className="py-8">
-      <div className="container mx-auto">
-        <>
-          return(
-          <h1 className="h1Style">{count}</h1>)
-          <button className="btn" onClick={number}>
-            Click Me
+    <div class="login-container">
+      <div class="login-box">
+        <h2>Login {fullName}</h2>
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="USERNAME"
+              onChange={userName}
+              value={name}
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="PASSWORD"
+            />
+          </div>
+          <button type="submit" onClick={onSubmit}>
+            Submit
           </button>
-        </>
+          <div class="register">
+            <p> Already Registered?</p>
+          </div>
+        </form>
       </div>
-    </header>
+    </div>
   );
 };
 
