@@ -90,9 +90,6 @@ const Header = () => {
           <button type="submit" >
             Submit
           </button>
-          <div class="register">
-            <p> Already Registered?</p>
-          </div>
         </form>
       </div>
     </div>
